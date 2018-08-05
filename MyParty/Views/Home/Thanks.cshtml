@@ -1,0 +1,25 @@
+﻿@model MyParty.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <h2>谢谢您，@Model.Name</h2>
+    @if (Model.Attend == false)
+    {
+        <p>很遗憾，你不能参与，不过仍要谢谢你让我们知道。</p>
+    }
+    else
+    {
+        <p>感谢您的参与，已经为您准备了饮品，在冰箱中！</p>
+    }
+</body>
+</html>

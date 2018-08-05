@@ -1,0 +1,29 @@
+﻿@model MyParty.Models.Person
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>回复表单</title>
+</head>
+<body>
+    <h2>填写您的回复，确定是否参加派对</h2>
+    @using (Html.BeginForm())
+    {
+        <p>@Html.ValidationSummary()</p>
+        <p>姓名：@Html.TextBoxFor(x => Model.Name)</p>
+        <p>邮箱：@Html.TextBoxFor(x => Model.Email)</p>
+        <p>
+            是否参加：@Html.DropDownListFor(x => Model.Attend, 
+                new[]{new SelectListItem(){Text="是",Value="true"},new SelectListItem(){Text="否",Value="false"}
+                      }, "选择是否参加")
+        </p>
+        <input type="submit" value="提交回复" />
+    }
+</body>
+</html>

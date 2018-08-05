@@ -13,5 +13,25 @@ namespace MyParty.Controllers
         {
             return View();
         }
+
+        // GET: rsvp
+        public ActionResult rsvp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult rsvp(MyParty.Models.Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("Thanks", person);
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }
